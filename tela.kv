@@ -1,0 +1,207 @@
+#:import C kivy.utils.get_color_from_hex
+#:import I kivy.resources.resource_find
+<Gerenciador>:
+  Telar:
+    name: 'logar'
+  TeclaF:
+    #on_enter: root.primeira()
+    name: 'teclaD'
+  TeclaD:
+    name: 'teclaF'
+<Telar>:
+  FloatLayout:
+    Button:
+      size_hint: .5, .1
+      pos_hint: {"center_x":.5, "center_y": .4}
+      text: "Validar Codigo"
+      on_press: root.aoClick()
+      background_color: C("#5658DD")
+
+    TextInput:
+      id: codigo
+      size_hint: .5, .06
+      pos_hint: {"center_x":.5, "center_y": .5}
+      hint_text: "Coloque o Codigo para validar"
+      background_color: C("#5658DD")
+      hint_text_color: C("#F0EFF4")
+
+    ImageButton:
+      size_hint: .5, .3
+      pos_hint: {"center_x":0.5, "center_y": 0.8}
+      source: I('logo.png')
+      on_press: root.canalYt()
+
+    ImageButton:
+      size_hint: .1, .1
+      pos_hint: {"right":1., "top": 1}
+      source: I('image.png')
+      on_press: root.canalYt()
+
+<TeclaF>:
+  MinhaTela:
+    GridButton:
+      size_hint: .5, 1
+      Label:
+        size_hint: .5, 1
+        height: 50
+        pos_hint: {"center_x":0.4, "center_y": 1}
+        text: "Feitico de invocador F"
+        font_size: 30
+        background_color: C("#5658DD")
+      CheckBox:
+        pos_hint: {"center_x":0.36, "center_y": 0.94}
+        group: 'checka'
+        on_active: root.on_checkbox_active(chk.active)
+        id: chk
+      Label:
+        size_hint: .5, 1
+        height: 50
+        pos_hint: {"center_x":0.43, "center_y": 0.94}
+        text: "Ativar"
+        background_color: C("#5658DD")
+      TextInput:
+        id: doacaoF
+        size_hint: .4, .06
+        pos_hint: {"right":0.6, "center_y": .8}
+        hint_text: "Coloque o Valor da Doacao"
+        background_color: C("#5658DD")
+        hint_text_color: C("#F0EFF4")
+      Label:
+        size_hint: .5, 1
+        height: 50
+        pos_hint: {"right":.3, "center_y": 0.8}
+        text: "Valor da doacao:"
+        text_color: C("#F0EFF4")
+
+      TextInput:
+        id: cdF
+        size_hint: .4, .06
+        pos_hint: {"right":0.6, "center_y": .74}
+        hint_text: "Coloque o Cooldown"
+        background_color: C("#5658DD")
+        hint_text_color: C("#F0EFF4")
+
+      Label:
+        size_hint: .5, 1
+        height: 50
+        pos_hint: {"right":.3, "center_y": 0.74}
+        text: "Cooldown:"
+        text_color: C("#F0EFF4")
+      
+      Button:
+        size_hint: .3, .1
+        pos_hint: {"center_x":0.4, "center_y": .4}
+        text: "Salvar"
+        on_press: root.Salvar()
+        background_color: C("#5658DD")
+      
+
+<TeclaD>:
+  MinhaTela:
+    GridButton:
+      size_hint: .5, 1
+      Label:
+        size_hint: .5, 1
+        height: 50
+        pos_hint: {"center_x":0.4, "center_y": 1}
+        text: "Feitico de invocador D"
+        font_size: 30
+        background_color: C("#5658DD")
+      CheckBox:
+        pos_hint: {"center_x":0.36, "center_y": 0.94}
+        group: 'check'
+        on_active: root.on_checkbox_active(chk.active)
+        id: chk
+      Label:
+        size_hint: .5, 1
+        height: 50
+        pos_hint: {"center_x":0.43, "center_y": 0.94}
+        text: "Ativar"
+        background_color: C("#5658DD")
+      TextInput:
+        id: doacaoF
+        size_hint: .4, .06
+        pos_hint: {"right":0.6, "center_y": .8}
+        hint_text: "Coloque o Valor da Doacao"
+        background_color: C("#5658DD")
+        hint_text_color: C("#F0EFF4")
+      Label:
+        size_hint: .5, 1
+        height: 50
+        pos_hint: {"right":.3, "center_y": 0.8}
+        text: "Valor da doacao:"
+        text_color: C("#F0EFF4")
+
+      TextInput:
+        id: cdF
+        size_hint: .4, .06
+        pos_hint: {"right":0.6, "center_y": .74}
+        hint_text: "Coloque o Cooldown"
+        background_color: C("#5658DD")
+        hint_text_color: C("#F0EFF4")
+
+      Label:
+        size_hint: .5, 1
+        height: 50
+        pos_hint: {"right":.3, "center_y": 0.74}
+        text: "Cooldown:"
+        text_color: C("#F0EFF4")
+      
+      Button:
+        size_hint: .3, .1
+        pos_hint: {"center_x":0.4, "center_y": .4}
+        text: "Salvar"
+        on_press: root.Salvar()
+        background_color: C("#5658DD")
+
+<MinhaTela@GridLayout>:
+  cols: 2
+  rows: 2
+  GridButton:
+    size_hint: .5, .1
+    pos_hint: {"center_x":.5, "center_y": .4}
+    ImageButton:
+      size_hint: .5, .5
+      pos_hint: {"left":1., "top": 1}
+      source: I('image.png')
+      on_press: root.canalYt()
+
+    ImageButton:
+      size_hint: .5, .5
+      pos_hint: {"right":0.8, "top": 1}
+      source: I('instagram.png')
+      on_press: root.insta()
+
+    Label:
+      size_hint: .5, 1
+      height: 50
+      pos_hint: {"center_x":0.2, "center_y": 0.1}
+      text: "Discord:"
+      color: C("#F0EFF4")
+    Label:
+      size_hint: .5, 1
+      height: 50
+      pos_hint: {"center_x":0.6, "center_y": 0.1}
+      text: "! Toni#2202"
+      color: C("#5658DD")
+
+  Label:
+    size_hint: None, None
+    size: 350, 50
+    x: 200
+    y: 200
+    
+  GridButton:
+    size_hint: .3, 1
+    Button:
+      size_hint: .3, 0.1
+      pos_hint: {"center_x":.5, "top": 0.9}
+      text: "F"
+      on_press: root.aoClickF()
+      background_color: C("#5658DD")
+    Button:
+      size_hint: .3, 0.1
+      pos_hint: {"center_x":.5, "top": 0.8}
+      text: "D"
+      on_press: root.aoClickD()
+      background_color: C("#5658DD")
