@@ -7,8 +7,8 @@ def verificar(code):
   url = "https://streamlabs.com/api/v1.0/token"
   querystring = {
     "grant_type": "authorization_code",
-    "client_id": "uldnv67vZD925bTfm6QyQFD93x3KR4nRgPwu2Mm2",
-    "client_secret": "sDSN7brB8pCWIsxJudp2KUCLiu80L6JKCxbLKiG6",
+    "client_id": "client_id do seu App",
+    "client_secret": "client_secret do seu App",
     "redirect_uri": "http://localhost:3000/",
     "code": code,
   }
