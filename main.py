@@ -125,7 +125,7 @@ class Telar(Screen):
 
 class TelaApp(App):
   title = 'Xto Stream'
-  icon = 'xtoiconekv.png'
+  icon = './assets/xtoiconekv.png'
   def build(self):
     return Gerenciador(transition=NoTransition())
 
